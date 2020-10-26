@@ -7,7 +7,6 @@ import 'package:flutterwave/models/requests/voucher/voucher_payment_request.dart
 import 'package:flutterwave/models/responses/charge_response.dart';
 import 'package:flutterwave/utils/flutterwave_constants.dart';
 import 'package:flutterwave/widgets/flutterwave_view_utils.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
 
 class PayWithVoucher extends StatefulWidget {
@@ -37,7 +36,7 @@ class _PayWithVoucherState extends State<PayWithVoucher> {
       home: Scaffold(
         key: this._scaffoldKey,
         appBar: AppBar(
-          backgroundColor: Hexcolor("#fff1d0"),
+          backgroundColor: Color(0xFFfff1d0),
           title: RichText(
             textAlign: TextAlign.left,
             text: TextSpan(

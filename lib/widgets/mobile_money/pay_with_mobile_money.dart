@@ -12,7 +12,6 @@ import 'package:flutterwave/utils/flutterwave_currency.dart';
 import 'package:flutterwave/utils/flutterwave_utils.dart';
 import 'package:flutterwave/widgets/card_payment/authorization_webview.dart';
 import 'package:flutterwave/widgets/flutterwave_view_utils.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
 
 class PayWithMobileMoney extends StatefulWidget {
@@ -49,7 +48,7 @@ class _PayWithMobileMoneyState extends State<PayWithMobileMoney> {
       home: Scaffold(
         key: this._scaffoldKey,
         appBar: AppBar(
-          backgroundColor: Hexcolor("#fff1d0"),
+          backgroundColor: Color(0xFFfff1d0),
           title: RichText(
             textAlign: TextAlign.left,
             text: TextSpan(

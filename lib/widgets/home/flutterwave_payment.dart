@@ -37,7 +37,7 @@ class _FlutterwaveUIState extends State<FlutterwaveUI> {
         this.widget._flutterwavePaymentManager;
 
     return MaterialApp(
-      debugShowCheckedModeBanner: this.widget._flutterwavePaymentManager.isDebugMode,
+      debugShowCheckedModeBanner: paymentManager.isDebugMode,
       home: Scaffold(
         key: this._scaffoldKey,
         body: SingleChildScrollView(

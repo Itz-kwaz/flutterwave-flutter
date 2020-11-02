@@ -45,6 +45,7 @@ class _PayWithMobileMoneyState extends State<PayWithMobileMoney> {
 
     final String currency = this.widget._paymentManager.currency;
     return MaterialApp(
+      debugShowCheckedModeBanner: widget._paymentManager.isDebugMode,
       home: Scaffold(
         key: this._scaffoldKey,
         appBar: AppBar(

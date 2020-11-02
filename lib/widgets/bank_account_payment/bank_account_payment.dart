@@ -57,6 +57,7 @@ class PayWithBankAccountState extends State<PayWithBankAccount> {
     this._bankController.text =
         this.selectedBank != null ? this.selectedBank.bankname : "";
     return MaterialApp(
+      debugShowCheckedModeBanner: widget._paymentManager.isDebugMode,
       home: Scaffold(
         key: this._scaffoldKey,
         appBar: AppBar(

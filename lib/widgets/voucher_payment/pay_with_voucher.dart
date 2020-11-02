@@ -33,6 +33,7 @@ class _PayWithVoucherState extends State<PayWithVoucher> {
     initialPhoneNumber != null ? initialPhoneNumber : "";
 
     return MaterialApp(
+      debugShowCheckedModeBanner: widget._paymentManager.isDebugMode,
       home: Scaffold(
         key: this._scaffoldKey,
         appBar: AppBar(

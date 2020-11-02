@@ -43,6 +43,7 @@ class _PayWithUssdState extends State<PayWithUssd> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: widget._paymentManager.isDebugMode,
       home: Scaffold(
         key: this._scaffoldKey,
         appBar: AppBar(

@@ -33,7 +33,7 @@ class Flutterwave {
 
   //todo include these when they become available and stable on v3
   // bool acceptVoucherPayment;
-  // bool acceptUKAccountPayment;
+  bool acceptUKAccountPayment;
   // bool acceptBarterPayment;
   // bool acceptSouthAfricaBankPayment;
   // bool acceptBankTransferPayment;
@@ -64,10 +64,11 @@ class Flutterwave {
     this.acceptGhanaPayment = false,
     this.acceptUgandaPayment = false,
     this.acceptFrancophoneMobileMoney = false,
+    this.acceptUKAccountPayment = false,
 
     //TODO to be added later when ready on v3
     // this.acceptBankTransferPayment = false,
-    // this.acceptUKAccountPayment = false,
+
     // this.acceptVoucherPayment = false,
     // this.acceptSouthAfricaBankPayment = false,
     // this.acceptBarterPayment = false,
@@ -153,11 +154,19 @@ class Flutterwave {
 
 
     //TODO to be included once UK Account payments and ACH become available on v3
-    // if (this.currency == FlutterwaveCurrency.GBP) {
-    //   // this.acceptUKAccountPayment = true;
-    //   this.acceptCardPayment = true;
-    //   // this.acceptBarterPayment = true;
-    // }
+    if (this.currency == FlutterwaveCurrency.GBP) {
+      this.acceptUKAccountPayment = true;
+      this.acceptCardPayment = true;
+      this.acceptRwandaMoneyPayment = false;
+      this.acceptMpesaPayment = false;
+      this.acceptZambiaPayment = false;
+      this.acceptGhanaPayment = false;
+      this.acceptUgandaPayment = false;
+      this.acceptFrancophoneMobileMoney = false;
+      this.acceptUSSDPayment = false;
+      this.acceptAccountPayment = false;
+      // this.acceptBarterPayment = true;
+    }
     // if (this.currency == FlutterwaveCurrency.ZAR) {
     //   this.acceptAccountPayment = false;
     //   this.acceptBankTransferPayment = false;
@@ -197,6 +206,8 @@ class Flutterwave {
         return "UG";
       case FlutterwaveCurrency.ZMW:
         return "ZM";
+      case FlutterwaveCurrency.GBP:
+        return 'GBP';
       default:
         return "NG";
     }
@@ -230,6 +241,7 @@ class Flutterwave {
         acceptGhanaPayment: this.acceptGhanaPayment,
         acceptUgandaPayment: this.acceptUgandaPayment,
         acceptFancophoneMobileMoney: this.acceptFrancophoneMobileMoney,
+        acceptUKAccountPayment: this.acceptUKAccountPayment,
         country: this._setCountry());
 
     final chargeResponse = await this._launchPaymentScreen(paymentManager);

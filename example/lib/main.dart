@@ -216,7 +216,8 @@ class _MyHomePageState extends State<MyHomePage> {
       FlutterwaveCurrency.KES,
       FlutterwaveCurrency.XAF,
       FlutterwaveCurrency.XOF,
-      FlutterwaveCurrency.ZMW
+      FlutterwaveCurrency.ZMW,
+      FlutterwaveCurrency.GBP
     ];
     return Container(
       height: 250,

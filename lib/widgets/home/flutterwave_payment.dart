@@ -194,6 +194,23 @@ class _FlutterwaveUIState extends State<FlutterwaveUI> {
                         ),
                       ),
                       Visibility(
+                        visible: paymentManager.acceptUKAccountPayment,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 50.0,
+                              child: FlutterwavePaymentOption(
+                                handleClick: this._launchUKAccountPaymentWidget,
+                                buttonText: "UK Account Payment",
+                              ),
+                            ),
+                            SizedBox(
+                              height: 0.5,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Visibility(
                         visible: paymentManager.acceptGhanaPayment,
                         child: Column(
                           children: [
@@ -385,16 +402,16 @@ class _FlutterwaveUIState extends State<FlutterwaveUI> {
   // }
 
   // Todo: include when UK bank codes is ready on v3
-  // void _launchUKAccountPaymentWidget() async {
-  //   final MobileMoneyPaymentManager mobileMoneyPaymentManager =
-  //       this.widget._flutterwavePaymentManager.getMobileMoneyPaymentManager();
-  //   final response = await Navigator.push(
-  //     this.context,
-  //     MaterialPageRoute(
-  //         builder: (context) => PayWithMobileMoney(mobileMoneyPaymentManager)),
-  //   );
-  //   Navigator.pop(this.context, response);
-  // }
+  void _launchUKAccountPaymentWidget() async {
+    final MobileMoneyPaymentManager mobileMoneyPaymentManager =
+        this.widget._flutterwavePaymentManager.getMobileMoneyPaymentManager();
+    final response = await Navigator.push(
+      this.context,
+      MaterialPageRoute(
+          builder: (context) => PayWithMobileMoney(mobileMoneyPaymentManager)),
+    );
+    Navigator.pop(this.context, response);
+  }
 
   // Todo include when Bank Transfer Payment is optimized.
   // void _launchBankTransferPaymentWidget() async {
